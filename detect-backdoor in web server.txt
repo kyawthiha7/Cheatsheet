@@ -1,0 +1,16 @@
+Here is the shell script to find backdoor in your web server.
+----------------------------------------
+#!/bin/bash
+
+#------------------------------------------------#
+# Search web files for potential malicious code. #
+#------------------------------------------------#
+
+SEARCH_DIR="/var/www"
+PATTERNS="passthru|shell_exec|system|phpinfo|base64_decode|popen|exec|proc_open|pcntl_exec|python_eval|fopen|fclose|readfile"
+
+grep -RPl --include=*.{php,txt} "($PATTERNS)" $SEARCH_DIR
+
+exit 0
+
+-----------------------------------------
