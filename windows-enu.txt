@@ -1,0 +1,21 @@
+find out what OS we are connected to:
+--------------------------------
+-systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
+-hostname
+-echo %username%
+-net users
+-net user user1
+-route print
+-netstat -ano
+-netsh firewall show state
+-netsh firewall show config
+
+running processes, started services and installed drivers.
+---------------------------------
+-schtasks /query /fo LIST /v
+-tasklist /SVC
+-net start
+-DRIVERQUERY
+
+
+
